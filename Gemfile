@@ -39,6 +39,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'omniauth'
-
 gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
-
+gem 'rest-client', '~> 1.7.2'
