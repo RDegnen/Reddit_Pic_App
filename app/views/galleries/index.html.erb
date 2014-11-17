@@ -1,26 +1,12 @@
-<!--
-<%= @response %>
 
 
+<% @mapped.each do |array| %>
+	<div class="box">
+		<ul>
+			<li><%= image_tag(array[1], class: "image-size") %></li>
+			<li><%= link_to(array[0], array[1]) %></li>
+		</ul>
+	</div>
+<% end %>
 
 
-<br>*****************
-<br>*****************
-<br>*****************
-<br>*****************
-<br>*****************
-<%= @parsed %>
-
-<br>****************
-<br>****************
-<br>****************
-<br>****************
-<br>****************
--->
-<tbody>
-	<%= @mapped.each do |array| %>
-		<tr>
-			<td><%= array %></td>
-		</tr>
-	<% end %>
-</tbody>
