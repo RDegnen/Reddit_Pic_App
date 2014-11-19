@@ -1,10 +1,6 @@
-
-
 <% @mapped.each do |array| %>
 	<div class="box">
 		<%= image_tag(array[1], class: "image-size") %>
 		<span class="title"><%= link_to(array[0], array[1], class: "image-link") %></span>
 	</div>
 <% end %>
-
-

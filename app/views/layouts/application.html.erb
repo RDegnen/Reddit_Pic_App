@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<NAV class="navbar">
+	<%= form_tag("/search", method: "get") do %>
+  		<%= label_tag(:q, "Search for:") %>
+  		<%= text_field_tag(:q) %>
+  		<%= submit_tag("Search") %>
+	<% end %>
+</NAV>
 <head>
   <title>RedditPicApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

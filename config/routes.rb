@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :galleries
   resources :sessions
+
+  get "/search" => "galleries#search"
 #match "/auth/reddit/callback" => "sessions#create"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
