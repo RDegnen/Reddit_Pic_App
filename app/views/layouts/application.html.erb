@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
-<NAV class="navbar">
-	<%= form_tag("/search", method: "get") do %>
-  		<%= label_tag(:q, "Search for:") %>
-  		<%= text_field_tag(:q) %>
-  		<%= submit_tag("Search") %>
-	<% end %>
-</NAV>
+
 <head>
   <title>RedditPicApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,6 +8,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <NAV class="navbar">
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>    
+      <%= link_to('Settings', edit_user_registration_path) %>    
+      </li>
+    <% else %>
+      <li>
+      <%= link_to('Sign in', new_user_session_path)  %>  
+      <%= link_to('Sign up', new_user_registration_path) %>
+      </li>
+    <% end %>
+    
+    <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+    <% end %>
+  </NAV>
 
 <%= yield %>
 
