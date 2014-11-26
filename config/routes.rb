@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root "galleries#index"
 
   resources :galleries
+  resources :likes
+  
 
   get "/search" => "galleries#search"
 #match "/auth/reddit/callback" => "sessions#create"

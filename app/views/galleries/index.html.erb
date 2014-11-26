@@ -1,10 +1,14 @@
-
-
 <% @mapped.each do |array| %>
 	<div class="box">
 		<%= image_tag(array[1], class: "image-size") %>
 		<span class="title"><%= link_to(array[0], array[1], class: "image-link") %></span>
+		<span class="like">
+			<% if current_user %>
+				<%= form_for @like do |f| %>
+					<%= f.hidden_field :link, value: "#{array[1]}"%>
+					<%= f.submit "Like Image" %>
+				<% end %>
+			<% end %>
+		</span>
 	</div>
 <% end %>
-
-

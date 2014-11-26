@@ -12,5 +12,9 @@ class GalleriesController < ApplicationController
 		response_hash = JSON.parse(@response)
 		@parsed = response_hash["data"]
 		@mapped = @parsed.map { |k| [k['title'], k['link']] }
+	
+		@like = Like.new
 	end
+
+	
 end
