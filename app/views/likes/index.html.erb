@@ -1,0 +1,6 @@
+<% @likes.each do |like| %>
+	<div class="box">
+		<%= image_tag(like.link, class: "image-size") %>
+		<span class="title"><%#= link_to(like.name, class: "image-link") %></span>
+	</div>
+<% end %>

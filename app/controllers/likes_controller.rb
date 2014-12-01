@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
 
 	def index
+		@likes = current_user.likes.all
 	end
 	
 	def new
@@ -9,7 +10,8 @@ class LikesController < ApplicationController
 
 	def create
 		@like = Like.new(like_params)
-		#@like = Like.save
+		@like.user_id = current_user.id
+		@like.save
 	end
 
 	private
@@ -18,6 +20,3 @@ class LikesController < ApplicationController
 			params.require(:like).permit(:link)
 		end
 end
-
-#look up remote true to form
-#ajax forms

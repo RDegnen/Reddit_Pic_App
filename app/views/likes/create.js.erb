@@ -1,0 +1,5 @@
+$(document).ready ->
+  $("#new_like").on("ajax:success", (e, data, status, xhr) ->
+    $("#new_like").append xhr.responseText
+  ).on "ajax:error", (e, xhr, status, error) ->
+    $("#new_post").append "<p>ERROR</p>"

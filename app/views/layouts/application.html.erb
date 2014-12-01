@@ -27,6 +27,10 @@
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
     <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to('My Likes', likes_path) %>
+    <% end %>
   </NAV>
 
 <%= yield %>

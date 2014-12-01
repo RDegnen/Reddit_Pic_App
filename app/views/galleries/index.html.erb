@@ -4,7 +4,7 @@
 		<span class="title"><%= link_to(array[0], array[1], class: "image-link") %></span>
 		<span class="like">
 			<% if current_user %>
-				<%= form_for @like do |f| %>
+				<%= form_for @like, remote: true do |f| %>
 					<%= f.hidden_field :link, value: "#{array[1]}"%>
 					<%= f.submit "Like Image" %>
 				<% end %>
