@@ -22,7 +22,9 @@ ul
 {
     list-style-type: none;
 }
-
+li {
+	list-style-type: none;
+}
 .box {
 	display: inline-block;
 	max-width: 800px;
@@ -35,12 +37,18 @@ ul
 .like {
 	display: none;
 }
+.delete {
+	display: none; 
+}
 
 .box:hover .title {
 	display: block;
 	max-width: 200px;
 }
 .box:hover .like {
+	display: block;
+}
+.box:hover .delete {
 	display: block;
 }
 
