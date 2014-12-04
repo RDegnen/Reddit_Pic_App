@@ -23,8 +23,14 @@
     <% end %>
     
     <%= form_tag("/search", method: "get") do %>
-        <%= label_tag(:q, "Search for subreddits") %>
-        <%= text_field_tag(:q) %>
+        <%= label_tag(:q, "Subreddit") %>
+        <%= text_field_tag(:q, params[:q]) %>
+        <%= label_tag(:p, "Filter By(Top/Time)") %>
+        <%= text_field_tag(:p, params[:p]) %>
+        <%= label_tag(:w, "Day/Week/Month/Year/All") %>
+        <%= text_field_tag(:w, params[:w]) %>
+        <%= label_tag(:r, "Page") %>
+        <%= text_field_tag(:r, params[:r]) %>
         <%= submit_tag("Search") %>
     <% end %>
 
